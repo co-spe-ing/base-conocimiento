@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Base de conocimiento sobre empleo público y talento humano</title>
+
+  <meta
+    name="description"
+    content="Base documental pública sobre empleo público, carrera administrativa,
+    talento humano, protección de datos, transparencia, procedimientos
+    administrativos y jurisprudencia colombiana."
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <style>
+    :root {
+      --azul-principal: #123f6d;
+      --azul-secundario: #1769aa;
+      --azul-claro: #eaf3fb;
+      --gris-fondo: #f4f6f8;
+      --gris-texto: #3d4852;
+      --gris-borde: #d8dee4;
+      --blanco: #ffffff;
+      --verde: #157347;
+      --sombra: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--gris-fondo);
+      color: #20262d;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 48px 20px;
+      background: linear-gradient(
+        135deg,
+        var(--azul-principal),
+        var(--azul-secundario)
+      );
+      color: var(--blanco);
+    }
+
+    .contenedor {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header h1 {
+      max-width: 850px;
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 0;
+      font-size: 1.08rem;
+    }
+
+    nav {
+      padding: 12px 0;
+      background: var(--blanco);
+      border-bottom: 1px solid var(--gris-borde);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    nav a {
+      padding: 7px 12px;
+      color: var(--azul-principal);
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: var(--azul-claro);
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 32px 0 48px;
+    }
+
+    .introduccion {
+      padding: 22px;
+      margin-bottom: 32px;
+      background: var(--blanco);
+      border-left: 5px solid var(--azul-secundario);
+      border-radius: 8px;
+      box-shadow: var(--sombra);
+    }
+
+    .introduccion h2 {
+      margin-top: 0;
+      color: var(--azul-principal);
+    }
+
+    section {
+      margin: 38px 0;
+      scroll-margin-top: 78px;
+    }
+
+    section > h2 {
+      margin-bottom: 8px;
+      color: var(--azul-principal);
+      font-size: 1.75rem;
+    }
+
+    .descripcion-seccion {
+      margin-top: 0;
+      color: var(--gris-texto);
+    }
+
+    .documentos {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 320px), 1fr)
+      );
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      padding: 22px;
+      background: var(--blanco);
+      border: 1px solid var(--gris-borde);
+      border-radius: 10px;
+      box-shadow: var(--sombra);
+    }
+
+    article h3 {
+      margin: 0 0 8px;
+      color: var(--azul-principal);
+      font-size: 1.22rem;
+      line-height: 1.35;
+    }
+
+    article p {
+      margin: 8px 0;
+    }
+
+    .metadatos {
+      margin-bottom: 8px;
+      color: var(--gris-texto);
+      font-size: 0.92rem;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      width: fit-content;
+      padding: 4px 9px;
+      margin-bottom: 10px;
+      background: var(--azul-claro);
+      color: var(--azul-principal);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: bold;
+    }
+
+    .palabras-clave {
+      color: var(--gris-texto);
+      font-size: 0.91rem;
+    }
+
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 16px;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 10px 14px;
+      background: var(--azul-secundario);
+      color: var(--blanco);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .boton:hover,
+    .boton:focus {
+      background: var(--azul-principal);
+      text-decoration: underline;
+    }
+
+    .boton-docx {
+      background: var(--verde);
+    }
+
+    .aviso {
+      padding: 18px;
+      margin: 32px 0;
+      background: #fff8e1;
+      border-left: 5px solid #d99b00;
+      border-radius: 8px;
+    }
+
+    footer {
+      padding: 28px 20px;
+      background: #152536;
+      color: var(--blanco);
+    }
+
+    footer p {
+      max-width: 1100px;
+      margin: 6px auto;
+    }
+
+    code {
+      padding: 2px 5px;
+      background: #edf1f4;
+      color: #263746;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 34px 16px;
+      }
+
+      .contenedor {
+        width: min(100% - 22px, 1100px);
+      }
+
+      article {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="contenedor">
+      <h1>Base de conocimiento sobre empleo público y talento humano</h1>
+
+      <p>
+        Colección documental pública sobre carrera administrativa,
+        función pública, talento humano, procedimientos administrativos,
+        transparencia, protección de datos y jurisprudencia colombiana.
+      </p>
+    </div>
+  </header>
+
+  <nav aria-label="Navegación por categorías">
+    <div class="contenedor">
+      #constitucionConstitución</a>
+      #normativaNormativa</a>
+      #dianDocumentos DIAN</a>
+      #jurisprudenciaJurisprudencia</a>
+      #plantillasPlantillas</a>
+    </div>
+  </nav>
+
+  <main class="contenedor">
+    <div class="introduccion">
+      <h2>Acerca de esta base documental</h2>
+
+      <p>
+        Esta página funciona como índice público de los documentos
+        utilizados por un agente de conocimiento. Los documentos se
+        encuentran alojados en este mismo sitio y pueden consultarse
+        directamente desde los enlaces incluidos en cada ficha.
+      </p>
+
+      <p>
+        Para interpretar correctamente la información, deben verificarse
+        la vigencia, las modificaciones, las derogatorias, las
+        concordancias y los efectos particulares de cada norma o
+        providencia.
+      </p>
+
+      <p>
+        La dirección principal de esta base es:
+        <strong>
+          https://co-spe-ing.github.io/base-conocimiento/
+        </strong>
+      </p>
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- CONSTITUCIÓN                                            -->
+    <!-- ====================================================== -->
+
+    <section id="constitucion">
+      <h2>Constitución Política</h2>
+
+      <p class="descripcion-seccion">
+        Norma fundamental del ordenamiento jurídico colombiano y marco
+        constitucional para la función pública, el debido proceso, la
+        igualdad, el acceso a cargos públicos y la protección de derechos.
+      </p>
+
+      <div class="documentos">
+        <article>
+          <span class="etiqueta">Constitución · PDF</span>
+
+          <h3>Constitución Política de Colombia de 1991</h3>
+
+          <p class="metadatos">
+            Asamblea Nacional Constituyente · 1991
+          </p>
+
+          <p>
+            Texto constitucional que establece los principios, derechos,
+            deberes y organización del Estado colombiano. Sirve como marco
+            superior para analizar la igualdad, el debido proceso, el
+            derecho de petición, el acceso al empleo público, la carrera
+            administrativa, el mérito, la función administrativa y la
+            protección de datos personales.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> Constitución, derechos
+            fundamentales, empleo público, mérito, carrera administrativa,
+            igualdad, debido proceso y función administrativa.
+          </p>
+
+          <div class="acciones">
+            <a
+              class="boton"
+              href="Constituci%C3%B3n_Pol%C3%ADtica_1_de_1991_Asamblea_Nacional_Constituyente.pdf"
+              type="application/pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+        ====================== -->
+    <!-- NORMATIVA GENERAL                                      -->
+    <!-- ====================================================== -->
+
+    <section id="normativa">
+      <h2>Normativa administrativa y de función pública</h2>
+
+      <p class="descripcion-seccion">
+        Leyes y decretos relacionados con empleo público, carrera
+        administrativa, procedimiento administrativo, transparencia y
+        organización del sector de Función Pública.
+      </p>
+
+      <div class="documentos">
+        <article>
+          <span class="etiqueta">Ley · PDF</span>
+
+          <h3>Ley 909 de 2004</h3>
+
+          <p class="metadatos">
+            Empleo público, carrera administrativa y gerencia pública
+          </p>
+
+          <p>
+            Marco general colombiano sobre empleo público, carrera
+            administrativa, mérito, provisión de empleos, evaluación del
+            desempeño, permanencia, retiro y gerencia pública. Es una
+            referencia central para el análisis de los sistemas de carrera
+            y la administración del talento humano estatal.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> Ley 909, empleo público,
+            carrera administrativa, mérito, concurso, evaluación del
+            desempeño, provisión de empleos y gerencia pública.
+          </p>
+
+          <div class="acciones">
+            <a
+         004.pdf
+              Consultar Ley 909 de 2004
+            </a>
+          </div>
+        </article>
+
+        <article>
+          <span class="etiqueta">Ley · PDF</span>
+
+          <h3>Ley 1437 de 2011</h3>
+
+          <p class="metadatos">
+            Código de Procedimiento Administrativo y de lo
+            Contencioso Administrativo
+          </p>
+
+          <p>
+            Regula las actuaciones administrativas, el derecho de
+            petición, las notificaciones, los recursos, los actos
+            administrativos, el procedimiento ante las autoridades y los
+            medios de control ante la jurisdicción de lo contencioso
+            administrativo.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> CPACA, procedimiento
+            administrativo, acto administrativo, notificación, recursos,
+            derecho de petición, revocatoria y control judicial.
+          </p>
+
+          <div class="acciones">
+            <a
+              class="boton"
+              href="Ley_1437_de_2011.pdf"
+ </a>
+          </div>
+        </article>
+
+        <article>
+          <span class="etiqueta">Ley · PDF</span>
+
+          <h3>Ley 1712 de 2014</h3>
+
+          <p class="metadatos">
+            Transparencia y derecho de acceso a la información pública
+          </p>
+
+          <p>
+            Regula el derecho de acceso a la información pública, la
+            transparencia activa, la publicación de información por parte
+            de sujetos obligados, las excepciones de acceso y los
+            instrumentos para la gestión de información pública.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> transparencia, acceso a la
+            información pública, información clasificada, información
+            reservada, publicación y sujetos obligados.
+          </p>
+
+          <div class="acciones">
+            Ley_1712_de_2014.pdf
+              Consultar Ley 1712 de 2014
+            </a>
+          </div>
+        </article>
+
+        <article>
+          <span class="etiqueta">Decreto · PDF</span>
+
+          <h3>Decreto 1083 de 2015</h3>
+
+          <p class="metadatos">
+            Decreto Único Reglamentario del Sector de Función Pública
+          </p>
+
+          <p>
+            Compila disposiciones reglamentarias del sector de Función
+            Pública. Contiene reglas sobre empleo público, requisitos,
+            funciones, competencias laborales, situaciones
+            administrativas, capacitación, evaluación, provisión,
+            nomenclatura y administración del talento humano estatal.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> Decreto 1083, Función Pública,
+            manual de funciones, requisitos, competencias, situaciones
+            administrativas, encargo y talento humano.
+          </p>
+
+          <div class="acciones">
+            Decreto_1083_de_2015_Sector_de_Funci%C3%B3n_P%C3%BAblica.pdf
+              Consultar Decreto 1083 de 2015
+            </a>
+          </div>
+        </article>
+
+        <article>
+          <span class="etiqueta">Decreto ley · PDF</span>
+
+          <h3>Decreto Ley 0927 de 2023</h3>
+
+          <p class="metadatos">
+            Sistema Específico de Carrera Administrativa de la DIAN
+          </p>
+
+          <p>
+            Modifica el Sistema Específico de Carrera de los empleados
+            públicos de la DIAN y regula aspectos de la administración y
+            gestión del talento humano. Comprende materias relacionadas
+            con ingreso, permanencia, movilidad, mérito, competencias,
+            situaciones administrativas, listas de elegibles y retiro.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> DIAN, sistema específico de
+            carrera, mérito, talento humano, listas de elegibles,
+            movilidad, competencias y retiro.
+          </p>
+
+          <div class="acciones">
+            Decreto_927_de_2023.pdf
+              Consultar Decreto Ley 0927 de 2023
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- DOCUMENTOS DIAN                                        -->
+    <!-- ====================================================== -->
+
+    <section id="dian">
+      <h2>Documentos institucionales de la DIAN</h2>
+
+      <p class="descripcion-seccion">
+        Documentos relacionados con funciones, requisitos, competencias
+        laborales y protección de datos personales en la entidad.
+      </p>
+
+      <div class="documentos">
+        <article>
+          <span class="etiqueta">Resolución · PDF</span>
+
+          <h3>Resolución 000067 del 11 de abril de 2024</h3>
+
+          <p class="metadatos">
+            Manual Específico de Requisitos y Funciones de la DIAN
+          </p>
+
+          <p>
+            Resolución mediante la cual se adopta el Manual Específico de
+            Requisitos y Funciones para los empleos de la planta de
+            personal de la DIAN. Define su ámbito de aplicación, relaciona
+            las fichas de empleo, establece funciones comunes y regula la
+            comunicación y certificación de funciones.
+          </p>
+
+          <p>
+            El acto administrativo relaciona 466 fichas de descripción de
+            empleos registradas en el formato FT-TAH-1824, las cuales hacen
+            parte integral del Manual Específico de Requisitos y Funciones.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> Resolución 000067, manual de
+            funciones, fichas de empleo, requisitos, competencias,
+            comunicación de funciones, certificación y DIAN.
+          </p>
+
+          <div class="acciones">
+            Resoluci%C3%B3n%20000067%20de%2011042024.pdf
+              Consultar Resolución 000067 de 2024
+            </a>
+          </div>
+        </article>
+
+        <article>
+          <span class="etiqueta">Manual institucional · PDF</span>
+
+          <h3>Protección de datos personales en la DIAN</h3>
+
+          <p class="metadatos">
+            Lineamientos institucionales para el tratamiento de datos
+          </p>
+
+          <p>
+            Documento de referencia sobre protección de datos personales
+            en la DIAN. Aborda principios del tratamiento, derechos de los
+            titulares, responsabilidades institucionales y lineamientos
+            para la recolección, uso, almacenamiento, circulación,
+            transmisión, protección y supresión de datos personales.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> protección de datos, habeas
+            data, privacidad, tratamiento de información, autorización,
+            seguridad de la información, responsable y encargado.
+          </p>
+
+          <div class="acciones">
+            Proteccion_Datos_DIAN.pdf
+              Consultar documento de protección de datos
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- JURISPRUDENCIA                                          -->
+    <!-- ====================================================== -->
+
+    <section id="jurisprudencia">
+      <h2>Jurisprudencia</h2>
+
+      <p class="descripcion-seccion">
+        Providencias relacionadas con carrera administrativa, mérito,
+        estabilidad laboral reforzada y protección constitucional.
+      </p>
+
+      <div class="documentos">
+        <article>
+          <span class="etiqueta">Sentencia constitucional · PDF</span>
+
+          <h3>Sentencia C-197 de 2025</h3>
+
+          <p class="metadatos">
+            Corte Constitucional · Sistema específico de carrera de la DIAN
+          </p>
+
+          <p>
+            Providencia sobre el uso de listas de elegibles en el Sistema
+            Específico de Carrera de la DIAN. Examina el principio
+            constitucional del mérito y los derechos a la igualdad, al
+            debido proceso y al acceso al desempeño de cargos públicos.
+          </p>
+
+          <p>
+            La decisión estudia la restricción para utilizar listas de
+            elegibles cuando el empleo estaba ocupado mediante encargo o
+            provisionalidad, dentro del régimen previsto por el Decreto
+            Ley 0927 de 2023.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> Sentencia C-197 de 2025,
+            DIAN, lista de elegibles, mérito, encargo, provisionalidad,
+            igualdad y acceso a cargos públicos.
+          </p>
+
+          <div class="acciones">
+            C-197%202025.pdf
+              Consultar Sentencia C-197 de 2025
+            </a>
+          </div>
+        </article>
+
+        <article>
+          <span class="etiqueta">Sentencia laboral · PDF</span>
+
+          <h3>Sentencia SL2600 de 2025</h3>
+
+          <p class="metadatos">
+            Corte Suprema de Justicia · Sala de Casación Laboral
+          </p>
+
+          <p>
+            Providencia relacionada con la estabilidad laboral reforzada
+            de las personas próximas a pensionarse. Analiza la protección
+            de quien se encuentra a tres años o menos de reunir el
+            requisito de edad pensional, incluso cuando ya cuenta con el
+            número requerido de semanas de cotización.
+          </p>
+
+          <p>
+            La decisión desarrolla la protección del tránsito hacia la
+            pensión y examina los efectos de la terminación laboral sin
+            justa causa sobre la subsistencia y la garantía efectiva del
+            derecho pensional.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> SL2600-2025, prepensionado,
+            estabilidad laboral reforzada, edad pensional, semanas
+            cotizadas, reintegro y mínimo vital.
+          </p>
+
+          <div class="acciones">
+            SL2600-2025.pdf
+              Consultar Sentencia SL2600 de 2025
+            </a>
+          </div>
+        </article>
+
+        <article>
+          <span class="etiqueta">Sentencia de tutela · PDF</span>
+
+          <h3>Sentencia T-084 de 2018</h3>
+
+          <p class="metadatos">
+            Corte Constitucional · Protección de cabeza de familia
+          </p>
+
+          <p>
+            Providencia relacionada con la protección derivada del
+            denominado retén social y con los criterios para acreditar la
+            condición de cabeza de familia. También analiza la procedencia
+            de la acción de tutela y la estabilidad laboral reforzada en
+            escenarios de especial protección constitucional.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> T-084 de 2018, retén social,
+            cabeza de familia, estabilidad laboral reforzada, tutela,
+            mínimo vital y especial protección constitucional.
+          </p>
+
+          <div class="acciones">
+            T-084%202018.pdf
+              Consultar Sentencia T-084 de 2018
+            </a>
+          </div>
+        </article>
+
+        <article>
+          <span class="etiqueta">Sentencia de tutela · PDF</span>
+
+          <h3>Sentencia T-737 de 2017</h3>
+
+          <p class="metadatos">
+            Corte Constitucional · Territorio colectivo y debido proceso
+            administrativo
+          </p>
+
+          <p>
+            Providencia relacionada con el derecho fundamental al
+            territorio colectivo, el debido proceso administrativo y la
+            protección de comunidades indígenas. Estudia los efectos de
+            las dilaciones administrativas en los procesos de constitución
+            de resguardos.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> T-737 de 2017, territorio
+            colectivo, resguardo indígena, debido proceso administrativo,
+            dilación administrativa y propiedad colectiva.
+          </p>
+
+          <div class="acciones">
+            sentencia%20t-737-2017.pdf
+              Consultar Sentencia T-737 de 2017
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- PLANTILLAS                                              -->
+    <!-- ====================================================== -->
+
+    <section id="plantillas">
+      <h2>Plantillas administrativas</h2>
+
+      <p class="descripcion-seccion">
+        Modelos editables de documentos administrativos. Las plantillas
+        deben ser revisadas, actualizadas y adaptadas al caso particular
+        antes de su utilización.
+      </p>
+
+      <div class="aviso">
+        <strong>Advertencia:</strong> las plantillas no sustituyen el
+        análisis jurídico ni administrativo. Antes de utilizarlas deben
+        verificarse los hechos, la competencia, el procedimiento, la
+        motivación, la normativa vigente, los términos, las pruebas y la
+        información particular del caso.
+      </div>
+
+      <div class="documentos">
+        <article>
+          <span class="etiqueta">Plantilla · DOCX</span>
+
+          <h3>
+            Plantilla de modificación de nombramiento por cambio de sede
+          </h3>
+
+          <p class="metadatos">
+            Modelo editable de acto o documento administrativo
+          </p>
+
+          <p>
+            Plantilla de apoyo para estructurar un documento relacionado
+            con la modificación de un nombramiento por cambio de sede.
+            Debe completarse con la identificación del empleo, la persona
+            destinataria, la sede de origen, la nueva sede, la motivación,
+            la necesidad del servicio y los fundamentos jurídicos
+            aplicables.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> modificación de nombramiento,
+            cambio de sede, ubicación, empleo público, acto administrativo
+            y necesidad del servicio.
+          </p>
+
+          <div class="acciones">
+            PLANTILLA%20MODIFICA%20NOMBRAMIENTO%20CAMBIO%20DE%20SEDE.docx
+              Descargar plantilla de cambio de sede
+            </a>
+          </div>
+        </article>
+
+        <article>
+          <span class="etiqueta">Plantilla · DOCX</span>
+
+          <h3>
+            Plantilla de respuesta a petición de direcciones seccionales
+          </h3>
+
+          <p class="metadatos">
+            Modelo editable de respuesta administrativa
+          </p>
+
+          <p>
+            Plantilla para preparar respuestas a peticiones provenientes
+            de direcciones seccionales. Debe adaptarse al objeto de la
+            solicitud, la competencia de la dependencia, los antecedentes,
+            las normas aplicables, el análisis institucional y la respuesta
+            concreta a cada petición formulada.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> petición, respuesta,
+            dirección seccional, competencia, antecedentes, análisis y
+            procedimiento administrativo.
+          </p>
+
+          <div class="acciones">
+            <a
+              class="boton boton-docx"
+              href="PLANTILLA%20RESPUESTA%20A%20PETICION%20DE%20SECCIONALES.docx"
+              type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              target="_blank"
+              rel="noopener noreferrern de recurso sobre reubicación
+          </h3>
+
+          <p class="metadatos">
+            Modelo que confirma una decisión de reubicación
+          </p>
+
+          <p>
+            Plantilla para elaborar una decisión administrativa que
+            resuelve un recurso y confirma una reubicación. Debe
+            completarse con el acto recurrido, los argumentos de la persona
+            recurrente, las pruebas, la oportunidad del recurso, la
+            competencia, la motivación, el análisis de los cargos y la
+            decisión correspondiente.
+          </p>
+
+          <p class="palabras-clave">
+            <strong>Palabras clave:</strong> recurso, reubicación,
+            confirmación, acto administrativo, motivación, pruebas,
+            competencia y decisión.
+          </p>
+
+          <div class="acciones">
+            <a
+              class="boton boton-docx"
+              href="PLANTILLA%20RESUELVE%20RECURSO%20REUBICACION%20CONFIRMANDO.docx"
+              type="application/vnd.openxmlformats-officedocument. </section>
+
+    <div class="aviso">
+      <strong>Nota sobre vigencia:</strong> esta colección documental es
+      una fuente de consulta. La inclusión de una norma, sentencia,
+      resolución o plantilla no garantiza por sí sola su vigencia,
+      aplicabilidad o pertinencia para un caso concreto. Deben consultarse
+      las fuentes oficiales y las modificaciones posteriores.
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      <strong>Base de conocimiento documental</strong>
+    </p>
+
+    <p>
+      Repositorio público:
+      https://github.com/co-spe-ing/base-conocimiento
+    </p>
+
+    <p>
+      Sitio web:
+      https://co-spe-ing.github.io/base-conocimiento/
+    </p>
+
+    <p>
+      Última actualización de la página: septiembre de 2026.
+    </p>
+  </footer>
+</body>
+</html>
