@@ -1,0 +1,37 @@
+:root{--fondo:#fbfbf8;--texto:#1d232b;--suave:#5b6470;--linea:#dfe3e6;--acento:#0b5c8a;--caja:#eef2f5}
+@media (prefers-color-scheme:dark){:root{--fondo:#15191d;--texto:#e6e9ec;--suave:#a4adb7;--linea:#2c3339;--acento:#7cc0ea;--caja:#1e252b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--texto);font:17px/1.6 Georgia,"Times New Roman",serif}
+header.sitio,footer.sitio{font:14px/1.5 system-ui,"Segoe UI",sans-serif;color:var(--suave);padding:.8rem 1.2rem}
+header.sitio{border-bottom:1px solid var(--linea)}
+footer.sitio{border-top:1px solid var(--linea);margin-top:3rem}
+header.sitio a{color:var(--texto);font-weight:600;text-decoration:none}
+main{max-width:46rem;margin:0 auto;padding:1.5rem 1.2rem}
+h1,h2,h3,nav,dl,table,.docs,.aviso,.ficha,.toc,.partes{font-family:system-ui,"Segoe UI",sans-serif}
+h1{font-size:1.55rem;line-height:1.25;margin:.4rem 0 1rem}
+h2{font-size:1.12rem;line-height:1.35;margin:2.2rem 0 .6rem}
+h3{font-size:1rem;line-height:1.35;margin:1.6rem 0 .5rem}
+h2.seccion{color:var(--acento)}
+section.articulo h2{font-size:1.02rem}
+a{color:var(--acento)}
+.migas,.ficha{font-size:.85rem;color:var(--suave)}
+.aviso{font-size:.85rem;color:var(--suave);background:var(--caja);padding:.6rem .8rem;border-radius:6px}
+.nota-editorial{font-size:.9rem;color:var(--suave)}
+.nota{font-size:.85rem;color:var(--suave);margin:.3rem 0 .3rem 1.2rem}
+sup.llamada{font-size:.7em;line-height:0}
+pre{font-size:.75rem;line-height:1.45;overflow-x:auto;background:var(--caja);padding:.8rem;border-radius:6px}
+.tabla{overflow-x:auto}
+table{border-collapse:collapse;font-size:.9rem;width:100%}
+td,th{border:1px solid var(--linea);padding:.35rem .5rem;text-align:left;vertical-align:top}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1rem;font-size:.95rem}
+dt{color:var(--suave)}
+dd{margin:0}
+.docs{list-style:none;padding:0}
+.docs li{padding:.7rem 0;border-bottom:1px solid var(--linea)}
+.docs .meta,.docs .alias{display:block;font-size:.85rem;color:var(--suave)}
+.toc{font-size:.92rem;padding-left:1.2rem}
+.toc li{margin:.15rem 0}
+.toc .n2{margin-left:1rem}.toc .n3{margin-left:2rem}.toc .n4{margin-left:3rem}
+.partes li{margin:.25rem 0}
+.paginacion{display:flex;justify-content:space-between;gap:1rem;margin-top:2.5rem;font-size:.9rem}
+@media (max-width:40rem){dl{grid-template-columns:1fr}dt{margin-top:.4rem}}
