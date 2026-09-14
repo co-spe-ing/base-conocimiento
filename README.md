@@ -1,4 +1,4 @@
-# Base de Conocimiento Jurídica DIAN
+# Base de Conocimiento Jurídica
 
 Sitio de consulta con el **texto íntegro en HTML** de la normativa, jurisprudencia y
 plantillas jurídicas que usa el agente de Copilot.
