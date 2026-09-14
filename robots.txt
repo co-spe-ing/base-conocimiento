@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://co-spe-ing.github.io/base-conocimiento/sitemap.xml
